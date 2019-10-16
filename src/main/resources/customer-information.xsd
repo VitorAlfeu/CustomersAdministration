@@ -20,10 +20,15 @@
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:element name="GetAllCustomerResponse">
+	<xs:element name="GetAllCustomerDetailRequest">
+		<xs:complexType>
+		</xs:complexType>
+	</xs:element>	
+
+	<xs:element name="GetAllCustomerDetailResponse">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="CustomerDatail" type="tns:CustomerDetail"/>
+				<xs:element name="CustomerDatail" type="tns:CustomerDetail" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -31,7 +36,7 @@
 	<xs:complexType name="CustomerDetail">
 			<xs:sequence>
 				<xs:element name="id" type="xs:int"/>
-				<xs:element name="nome" type="xs:string"/>
+				<xs:element name="name" type="xs:string"/>
 				<xs:element name="phone" type="xs:string"/>
 				<xs:element name="email" type="xs:string"/>
 			</xs:sequence>
